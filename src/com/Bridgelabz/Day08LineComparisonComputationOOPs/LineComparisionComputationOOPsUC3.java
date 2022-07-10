@@ -1,6 +1,6 @@
-/* check equality of two lines based on the end points, So
-   that I know when two lines are the equal.
-     - Using Java equals method to check equality of 2 Lengths is preferable..
+/* compare two lines based on the end points, So that I know
+   one line is equal, greater or less than the other line.
+        - Using Java compareTo method to compare 2 Lengths is preferable.
  */
 
 
@@ -8,7 +8,7 @@ package com.Bridgelabz.Day08LineComparisonComputationOOPs;
 
 import java.util.Scanner;
 
-class Point1 {
+class Point3 {
     public double x;// co-ordinate x
     public double y;// co-ordinate y
 
@@ -29,7 +29,7 @@ class Point1 {
     }
 }
 
-public class LineComparisionComputationOOPsUC2 {
+public class LineComparisionComputationOOPsUC3 {
     static void equalityCheck() {
         double lineLength1 = lineLength();
         double lineLength2 = lineLength();
@@ -40,8 +40,20 @@ public class LineComparisionComputationOOPsUC2 {
         }
     }
 
+    static void compareTo() {
+        double lineLength1 = lineLength();
+        double lineLength2 = lineLength();
+        if (lineLength1 == lineLength2) {
+            System.out.println("Length of Line 1 is equal to Length of Line 2");
+        } else if (lineLength1 > lineLength2) {
+            System.out.println("Length of Line 1 is greater than Length of Line 2");
+        } else {
+            System.out.println("Length of Line 2 is greater than Length of Line 1");
+        }
+    }
+
     public static double lineLength() {
-        Point1 point = new Point1();
+        Point3 point = new Point3();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of x1: ");
         point.setX((scanner.nextInt()));
@@ -62,7 +74,6 @@ public class LineComparisionComputationOOPsUC2 {
     }
 
     public static void main(String[] args) {
-        equalityCheck();
-
+        compareTo();
     }
 }
